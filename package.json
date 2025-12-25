@@ -1,6 +1,6 @@
 {
   "name": "@theshadydev/ui-system",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AD UI System - Reusable component library and design system",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
