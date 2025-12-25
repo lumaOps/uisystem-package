@@ -68,9 +68,6 @@ export { CustomAlertDialog as AlertDialogCustom } from './components/alert-dialo
 export { DialogCustom } from './components/dialog/DialogCustom';
 export { default as ConfirmationModal } from './components/dialog/ConfirmationModal';
 export { CustomToast as ToastCustom } from './components/toast/ToastCustom';
-export { SonnerToast } from './components/sonner/sonnerToast';
-export { Toaster } from './components/toast/toaster';
-export { default as ToasterDefault } from './components/toast/toaster';
 export { LoadingCustom } from './components/loading/LoadingCustom';
 
 // Components - Editor
