@@ -37,7 +37,7 @@ const MobileStepper: React.FC<MobileStepperProps> = React.memo(
       () => (
         <div>
           <h2 className="font-semibold text-foreground">{t(currentStepInfo?.label)}</h2>
-          <p className="text-muted-foreground">{t(currentStepInfo?.description)}</p>
+          <p className="text-muted-foreground">{t(currentStepInfo?.description || '')}</p>
         </div>
       ),
       [currentStepInfo, t]

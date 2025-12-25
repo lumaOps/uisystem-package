@@ -25,41 +25,52 @@ export { SwitchCustom } from './components/switch/SwitchCustom';
 export { ComboboxCustom } from './components/combobox/ComboboxCustom';
 export { MultipleSelectCustom } from './components/multiple-select/MultipleSelectCustom';
 export { MultiSelectCheckboxCustom } from './components/multi-select/MultiSelectCheckboxCustom';
-export { ColorInput } from './components/color-input/ColorInput';
+export { default as ColorInput } from './components/color-input/ColorInput';
 export { OtpInput } from './components/otp-input/OtpInput';
-export { DropzoneCustom } from './components/dropzone/DropzoneCustom';
-export { DropzonePdf } from './components/dropzone/DropzonePdf';
+export { default as DropzoneCustom } from './components/dropzone/DropzoneCustom';
+export { default as DropzonePdf } from './components/dropzone/DropzonePdf';
 export { FormField } from './components/form/form';
 
 // Components - Layout
 export { CardCustom } from './components/card/CardCustom';
-export { CardWrapper } from './components/card/CardWrapper';
+export { default as CardWrapper } from './components/card/CardWrapper';
 export { Separator } from './components/separator/separator';
 export { AccordionCustom } from './components/accordion/AccordionCustom';
-export { AccordionForm } from './components/accordion/AccordionForm';
-export { Stepper } from './components/stepper/Stepper';
+export { default as AccordionForm } from './components/accordion/AccordionForm';
+export { default as HorizontalStepper } from './components/stepper/HorizontalStepper';
+export { default as MobileStepper } from './components/stepper/MobileStepper';
 export { BadgeCustom } from './components/badge/BadgeCustom';
 export { BadgeStatusCustom } from './components/badge/BadgeStatusCustom';
 
 // Components - Navigation
 export { BreadCrumbCustom } from './components/breadcrumb/BreadCrumbCustom';
-export { DynamicBreadCrumb } from './components/breadcrumb/DynamicBreadCrumb';
-export { Navbar } from './components/navbar/navbar';
+export { default as DynamicBreadCrumb } from './components/breadcrumb/DynamicBreadCrumb';
+export { default as Navbar } from './components/layouts/navbar';
 export { Sidebar } from './components/sidebar/sidebar';
 
 // Components - Data Display
 export { TableCustom } from './components/table/TableCustom';
 export { PaginationCustom } from './components/pagination/PaginationCustom';
-export { Skeleton } from './components/skeleton/Skeleton';
-export { Chart } from './components/chart/chart';
-export { EmptyData } from './components/empty-data/EmptyData';
+export { Skeleton } from './components/skeleton/skeleton';
+export {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+  type ChartConfig,
+} from './components/chart/chart';
+export { default as EmptyData } from './components/empty-data/EmptyData';
 
 // Components - Feedback
 export { AlertCustom } from './components/alert/AlertCustom';
-export { AlertDialogCustom } from './components/alert-dialog/AlertDialogCustom';
+export { CustomAlertDialog as AlertDialogCustom } from './components/alert-dialog/AlertDialogCustom';
 export { DialogCustom } from './components/dialog/DialogCustom';
-export { ConfirmationModal } from './components/dialog/ConfirmationModal';
-export { ToastCustom } from './components/toast/ToastCustom';
+export { default as ConfirmationModal } from './components/dialog/ConfirmationModal';
+export { CustomToast as ToastCustom } from './components/toast/ToastCustom';
+export { SonnerToast } from './components/sonner/sonnerToast';
+export { Toaster } from './components/toast/toaster';
+export { default as ToasterDefault } from './components/toast/toaster';
 export { LoadingCustom } from './components/loading/LoadingCustom';
 
 // Components - Editor
@@ -67,22 +78,22 @@ export { default as EditorXCustom } from './components/editor/EditorXCustom';
 
 // Components - Dynamic Forms
 export { default as FormsReader } from './components/dynamic-form/forms-read/FormsReader';
-export { ComponentReturn } from './components/dynamic-form/options/ComponentReturn';
-export { DynamicZodSchema } from './components/dynamic-form/schema/DynamicZodSchema';
+export { getComponent as ComponentReturn } from './components/dynamic-form/options/ComponentReturn';
+export { buildZodSchemaFromJson as DynamicZodSchema } from './components/dynamic-form/schema/DynamicZodSchema';
 
 // Components - Other
 export { CalendarCustom } from './components/calendar/CalendarCustom';
 export { DateTimePicker } from './components/date-time-picker/DateTimePicker';
 export { DaySelector } from './components/day-selector/DaySelector';
-export { TimeSelector } from './components/time-selector/TimeSelector';
-export { QrCodeCustom } from './components/qr-code/QrCodeCustom';
+export { default as TimeSelector } from './components/time-selector/TimeSelector';
+export { QRCodeCustom as QrCodeCustom } from './components/qr-code/QrCodeCustom';
 export { ProgressCustom } from './components/progress/ProgressCustom';
 export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './components/tooltip/tooltip';
 export { PopoverCustom } from './components/popover/popoverCustom';
-export { SheetCustom } from './components/sheet/SheetCustom';
+export { CustomSheet as SheetCustom } from './components/sheet/SheetCustom';
 export { TabsCustom } from './components/tabs/TabsCustom';
 export { CarouselImage } from './components/carousel/CarouselImage';
-export { DynamicIconLucide } from './components/dynamic-icon-lucide/DynamicIconLucide';
+export { default as DynamicIconLucide } from './components/dynamic-icon-lucide/DynamicIconLucide';
 
 // Re-export Radix UI primitives that are commonly used
 export {
@@ -97,8 +108,6 @@ export {
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@radix-ui/react-alert-dialog';
@@ -109,8 +118,6 @@ export {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
-  DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from '@radix-ui/react-dialog';
@@ -126,7 +133,7 @@ export { Label } from '@radix-ui/react-label';
 export { Popover, PopoverContent, PopoverTrigger } from '@radix-ui/react-popover';
 export { Progress } from '@radix-ui/react-progress';
 export { RadioGroup, RadioGroupItem } from '@radix-ui/react-radio-group';
-export { ScrollArea, ScrollBar } from '@radix-ui/react-scroll-area';
+export { ScrollArea, Scrollbar as ScrollBar } from '@radix-ui/react-scroll-area';
 export {
   Select,
   SelectContent,
@@ -139,9 +146,10 @@ export { Slider } from '@radix-ui/react-slider';
 export { Switch } from '@radix-ui/react-switch';
 export { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
 export { Toast, ToastProvider } from '@radix-ui/react-toast';
-export { Toggle, ToggleGroup, ToggleGroupItem } from '@radix-ui/react-toggle';
+export { Toggle } from '@radix-ui/react-toggle';
+export { ToggleGroup, ToggleGroupItem } from '@radix-ui/react-toggle-group';
 export { Tooltip as TooltipPrimitive } from '@radix-ui/react-tooltip';
 
-// Export types
-export type * from './types';
+// Export types - individual type exports can be added here as needed
+// Note: Types are exported from individual component files
 

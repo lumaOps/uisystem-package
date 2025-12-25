@@ -20,7 +20,7 @@ export function QRCodeCustom({
       ref={qrRef}
       className={`flex justify-center items-center w-full aspect-square max-w-[${size}px] sm:max-w-[90px] md:max-w-[100px] ${className}`}
     >
-      <QRCodeSVG value={value} level={level} className="w-full h-auto" />
+      <QRCodeSVG value={value} level={level} size={size} />
     </div>
   );
 }

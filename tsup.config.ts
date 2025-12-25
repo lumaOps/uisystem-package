@@ -1,16 +1,29 @@
 import { defineConfig } from 'tsup';
+import { resolve } from 'path';
 
 export default defineConfig({
   entry: ['src/index.ts'],
   format: ['cjs', 'esm'],
-  dts: true,
+  dts: {
+    compilerOptions: {
+      skipLibCheck: true,
+    },
+  },
   splitting: false,
   sourcemap: true,
   clean: true,
+  target: 'es2022',
+  esbuildOptions(options) {
+    options.alias = {
+      '@': resolve(__dirname, './src'),
+    };
+  },
   external: [
     'react',
     'react-dom',
     'react/jsx-runtime',
+    'next-themes',
+    '@lexical/overflow',
     '@radix-ui/react-accordion',
     '@radix-ui/react-alert-dialog',
     '@radix-ui/react-avatar',
