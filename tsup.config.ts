@@ -13,6 +13,8 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   target: 'es2022',
+  publicDir: false,
+  copyPublicDir: false,
   esbuildOptions(options) {
     options.alias = {
       '@': resolve(__dirname, './src'),

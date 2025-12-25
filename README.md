@@ -1,11 +1,11 @@
-# @vADD/ui-system
+# @ADD/ui-system
 
-AD UI System - A comprehensive React component library and design system built with Tailwind CSS and Radix UI.
+AD UI System - A comprehensive React component library and design system built with Tailwind CSS and ShadnCDN UI.
 
 ## Installation
 
 ```bash
-npm install @add/ui-system
+npm install @theshadydev/ui-system
 ```
 
 ## Peer Dependencies
@@ -21,7 +21,7 @@ npm install react react-dom next-intl @tanstack/react-query
 ### Import Components
 
 ```tsx
-import { CustomButton, InputCustom, CardCustom } from '@v12/ui-system';
+import { CustomButton, InputCustom, CardCustom } from '@theshadydev/ui-system';
 ```
 
 ### Import Styles
@@ -29,7 +29,7 @@ import { CustomButton, InputCustom, CardCustom } from '@v12/ui-system';
 In your main CSS file (e.g., `globals.css` or `app.css`):
 
 ```css
-@import '@add/ui-system/styles';
+@import '@theshadydev/ui-system/styles';
 ```
 
 Or in your Tailwind config, make sure to include the package in your content paths:
@@ -37,7 +37,7 @@ Or in your Tailwind config, make sure to include the package in your content pat
 ```js
 module.exports = {
   content: [
-    './node_modules/@v12/ui-system/dist/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@theshadydev/ui-system/dist/**/*.{js,ts,jsx,tsx}',
     // ... your other paths
   ],
 }
@@ -46,13 +46,13 @@ module.exports = {
 ### Import Utilities
 
 ```tsx
-import { cn } from '@v12/ui-system/utils';
+import { cn } from '@theshadydev/ui-system/utils';
 ```
 
 ### Import Types
 
 ```tsx
-import type { CustomButtonProps } from '@v12/ui-system';
+import type { CustomButtonProps } from '@theshadydev/ui-system';
 ```
 
 ## Components
