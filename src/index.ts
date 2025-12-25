@@ -41,6 +41,7 @@ export { default as HorizontalStepper } from './components/stepper/HorizontalSte
 export { default as MobileStepper } from './components/stepper/MobileStepper';
 export { BadgeCustom } from './components/badge/BadgeCustom';
 export { BadgeStatusCustom } from './components/badge/BadgeStatusCustom';
+export { BadgeStatusColor } from './components/badge/BadgeStatusColor';
 
 // Components - Navigation
 export { BreadCrumbCustom } from './components/breadcrumb/BreadCrumbCustom';
@@ -109,6 +110,8 @@ export {
   AlertDialogTrigger,
 } from '@radix-ui/react-alert-dialog';
 export { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
+export { AvatarCustom } from './components/avatar/avatarCustom';
+export type { AvatarCustomProps } from './components/avatar/avatarCustom';
 export { Checkbox } from '@radix-ui/react-checkbox';
 export { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@radix-ui/react-collapsible';
 export {
