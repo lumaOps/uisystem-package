@@ -1,0 +1,93 @@
+'use client';
+
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+import { useEffect, useState, JSX } from 'react';
+import * as React from 'react';
+
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
+import { $wrapNodeInElement } from '@lexical/utils';
+import {
+  $createParagraphNode,
+  $insertNodes,
+  $isRootOrShadowRoot,
+  COMMAND_PRIORITY_EDITOR,
+  LexicalCommand,
+  LexicalEditor,
+  createCommand,
+} from 'lexical';
+
+import {
+  $createPollNode,
+  PollNode,
+  createPollOption,
+} from '@/components/editor/nodes/poll-node';
+import { InputCustom } from '@/components/input/InputCustom';
+import { useCustomTranslation } from '@/hooks/translation/useCustomTranslation';
+import { DialogFooter } from '@/components/dialog/Dialog';
+import { CustomButton } from '@/components/button/CustomButton';
+
+export const INSERT_POLL_COMMAND: LexicalCommand<string> = createCommand('INSERT_POLL_COMMAND');
+
+export function InsertPollDialog({
+  activeEditor,
+  onClose,
+}: {
+  activeEditor: LexicalEditor;
+  onClose: () => void;
+}): JSX.Element {
+  const t = useCustomTranslation();
+  const [question, setQuestion] = useState('');
+
+  const onClick = () => {
+    activeEditor.dispatchCommand(INSERT_POLL_COMMAND, question);
+    onClose();
+  };
+
+  return (
+    <>
+      <div>
+        <InputCustom
+          id="poll-plugin-id-input"
+          label={t('Question')}
+          onChange={e => setQuestion(e.target.value)}
+          value={question}
+        />
+      </div>
+      <DialogFooter>
+        <CustomButton disabled={question.trim() === ''} onClick={onClick}>
+          {t('Confirm')}
+        </CustomButton>
+      </DialogFooter>
+    </>
+  );
+}
+
+export function PollPlugin(): JSX.Element | null {
+  const [editor] = useLexicalComposerContext();
+  useEffect(() => {
+    if (!editor.hasNodes([PollNode])) {
+      throw new Error('PollPlugin: PollNode not registered on editor');
+    }
+
+    return editor.registerCommand<string>(
+      INSERT_POLL_COMMAND,
+      payload => {
+        const pollNode = $createPollNode(payload, [createPollOption(), createPollOption()]);
+        $insertNodes([pollNode]);
+        if ($isRootOrShadowRoot(pollNode.getParentOrThrow())) {
+          $wrapNodeInElement(pollNode, $createParagraphNode).selectEnd();
+        }
+
+        return true;
+      },
+      COMMAND_PRIORITY_EDITOR
+    );
+  }, [editor]);
+  return null;
+}

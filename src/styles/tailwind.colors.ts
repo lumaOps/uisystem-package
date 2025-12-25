@@ -1,0 +1,46 @@
+export const colorsDefault = {
+  slate: genColorHsl('slate'),
+  brand: genColorHsl('brand'),
+  base: {
+    black: 'hsl(var(--base-black))',
+    white: 'hsl(var(--base-white))',
+    transparent: 'hsl(var(--base-transparent))',
+  },
+  gray: genColorHsl('gray'),
+  zinc: genColorHsl('zinc'),
+  neutral: genColorHsl('neutral'),
+  stone: genColorHsl('stone'),
+  red: genColorHsl('red'),
+  orange: genColorHsl('orange'),
+  amber: genColorHsl('amber'),
+  yellow: genColorHsl('yellow'),
+  lime: genColorHsl('lime'),
+  green: genColorHsl('green'),
+  emerald: genColorHsl('emerald'),
+  teal: genColorHsl('teal'),
+  cyan: genColorHsl('cyan'),
+  sky: genColorHsl('sky'),
+  blue: genColorHsl('blue'),
+  indigo: genColorHsl('indigo'),
+  violet: genColorHsl('violet'),
+  purple: genColorHsl('purple'),
+  fuchsia: genColorHsl('fuchsia'),
+  pink: genColorHsl('pink'),
+  rose: genColorHsl('rose'),
+};
+
+function genColorHsl(name: string) {
+  return {
+    50: `hsl(var(--${name}-50))`,
+    100: `hsl(var(--${name}-100))`,
+    200: `hsl(var(--${name}-200))`,
+    300: `hsl(var(--${name}-300))`,
+    400: `hsl(var(--${name}-400))`,
+    500: `hsl(var(--${name}-500))`,
+    600: `hsl(var(--${name}-600))`,
+    700: `hsl(var(--${name}-700))`,
+    800: `hsl(var(--${name}-800))`,
+    900: `hsl(var(--${name}-900))`,
+    950: `hsl(var(--${name}-950))`,
+  };
+}

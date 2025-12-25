@@ -1,0 +1,23 @@
+.btn-default {
+  @apply bg-primary-gradient hover:bg-primary-hover-gradient active:bg-primary-pressed-gradient text-primary-foreground shadow-btn-primary;
+}
+
+.btn-destructive {
+  @apply bg-destructive-gradient hover:bg-destructive-hover-gradient active:bg-destructive-pressed-gradient text-destructive-foreground shadow-sm;
+}
+
+.btn-outline {
+  @apply hover:bg-accent hover:text-accent-foreground border border-border bg-background shadow-btn-outline;
+}
+
+.btn-secondary {
+  @apply bg-secondary hover:bg-secondary-hover-gradient text-secondary-foreground shadow-sm;
+}
+
+.btn-ghost {
+  @apply hover:bg-accent hover:text-accent-foreground;
+}
+
+.btn-link {
+  @apply text-primary underline-offset-4 hover:underline;
+}
