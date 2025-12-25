@@ -41,7 +41,7 @@ export { default as HorizontalStepper } from './components/stepper/HorizontalSte
 export { default as MobileStepper } from './components/stepper/MobileStepper';
 export { BadgeCustom } from './components/badge/BadgeCustom';
 export { BadgeStatusCustom } from './components/badge/BadgeStatusCustom';
-export { BadgeStatusColor } from './components/badge/BadgeStatusColor';
+// BadgeStatusColor has project-specific dependencies, not exported
 
 // Components - Navigation
 export { BreadCrumbCustom } from './components/breadcrumb/BreadCrumbCustom';
