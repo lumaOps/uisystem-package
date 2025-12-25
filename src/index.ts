@@ -6,6 +6,7 @@ export { cn } from './utils';
 // Components - Buttons
 export { CustomButton, customButtonVariants } from './components/button/CustomButton';
 export type { IconPosition, CustomButtonProps } from './components/button/CustomButton';
+export { Button, buttonVariants } from './components/button/button';
 
 // Components - Inputs
 export { InputCustom } from './components/input/InputCustom';
@@ -34,6 +35,7 @@ export { FormField } from './components/form/form';
 // Components - Layout
 export { CardCustom } from './components/card/CardCustom';
 export { default as CardWrapper } from './components/card/CardWrapper';
+export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/card/card';
 export { Separator } from './components/separator/separator';
 export { AccordionCustom } from './components/accordion/AccordionCustom';
 export { default as AccordionForm } from './components/accordion/AccordionForm';
